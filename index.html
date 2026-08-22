@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Machakos Secondary School for the Deaf</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        header {
+            background: #064e3b;
+            color: white;
+        }
+
+        .top-bar {
+            background: #043c2d;
+            padding: 8px 5%;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .header-main {
+            padding: 20px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .school-name {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            background: white;
+            color: #064e3b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .school-name h1 {
+            font-size: 25px;
+        }
+
+        .school-name p {
+            color: #d1fae5;
+            font-size: 14px;
+        }
+
+        nav {
+            background: #ffffff;
+            padding: 0 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 18px;
+            text-decoration: none;
+            color: #064e3b;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            background: #064e3b;
+            color: white;
+        }
+
+        .hero {
+            min-height: 500px;
+            background:
+                linear-gradient(rgba(0, 50, 40, 0.75), rgba(0, 50, 40, 0.75)),
+                url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #064e3b;
+        }
+
+        .section {
+            padding: 60px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: #064e3b;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #064e3b;
+            margin-bottom: 10px;
+        }
+
+        .welcome {
+            background: white;
+        }
+
+        .welcome-content {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .welcome-image {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .welcome-text h2 {
+            color: #064e3b;
+            margin-bottom: 15px;
+            font-size: 32px;
+        }
+
+        .stats {
+            background: #064e3b;
+            color: white;
+        }
+
+        .stats-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 35px;
+        }
+
+        .stat p {
+            color: #d1fae5;
+        }
+
+        footer {
+            background: #022c22;
+            color: white;
+            padding: 45px 5% 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #d1d5db;
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            border-top: 1px solid #374151;
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 800px) {
+
+            .header-main {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .school-name {
+                flex-direction: column;
+            }
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            .cards,
+            .welcome-content,
+            .stats-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="top-bar">
+        Welcome to Machakos Secondary School for the Deaf
+    </div>
+
+    <div class="header-main">
+
+        <div class="school-name">
+
+            <div class="logo">
+                MSS<br>
+                DEAF
+            </div>
+
+            <div>
+                <h1>Machakos Secondary School for the Deaf</h1>
+                <p>Empowering Learners • Inspiring Excellence • Building Futures</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h2>Welcome to Machakos Secondary School for the Deaf</h2>
+
+        <p>
+            Providing quality, inclusive and learner-centred education
+            for students with hearing impairment.
+        </p>
+
+        <a href="about.html" class="btn btn-primary">
+            Discover Our School
+        </a>
+
+        <a href="admissions.html" class="btn btn-secondary">
+            Admissions
+        </a>
+
+    </div>
+
+</section>
+
+<section class="section welcome">
+
+    <div class="welcome-content">
+
+        <div>
+
+            <img
+                class="welcome-image"
+                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80"
+                alt="Students learning">
+
+        </div>
+
+        <div class="welcome-text">
+
+            <h2>Welcome to Our School</h2>
+
+            <p>
+                Machakos Secondary School for the Deaf is committed to
+                providing quality education and holistic development for
+                learners with hearing impairment.
+            </p>
+
+            <br>
+
+            <p>
+                We believe that every learner has unique abilities,
+                talents and potential. Our school provides a supportive
+                environment where students can learn, grow and prepare
+                for a successful future.
+            </p>
+
+            <br>
+
+            <a href="about.html" class="btn btn-primary">
+                Learn More
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>What We Offer</h2>
+
+        <p>
+            Supporting learners academically, socially and professionally.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">📚</div>
+
+            <h3>Quality Education</h3>
+
+            <p>
+                Learner-centred education designed to develop knowledge,
+                skills and confidence.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">🤝</div>
+
+            <h3>Inclusive Support</h3>
+
+            <p>
+                A supportive learning environment that recognizes and
+                responds to individual learner needs.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">🌟</div>
+
+            <h3>Talent Development</h3>
+
+            <p>
+                Encouraging students to discover their talents through
+                sports, creativity and practical activities.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section stats">
+
+    <div class="stats-grid">
+
+        <div class="stat">
+            <h3>100+</h3>
+            <p>Learners</p>
+        </div>
+
+        <div class="stat">
+            <h3>20+</h3>
+            <p>Teachers & Staff</p>
+        </div>
+
+        <div class="stat">
+            <h3>10+</h3>
+            <p>Learning Areas</p>
+        </div>
+
+        <div class="stat">
+            <h3>1</h3>
+            <p>Shared Vision</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>Machakos Secondary School for the Deaf</h3>
+
+            <p>
+                Empowering learners through quality education,
+                inclusion and holistic development.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <p>Home</p>
+            <p>About Us</p>
+            <p>Academics</p>
+            <p>Admissions</p>
+
+        </div>
+
+        <div>
+
+            <h3>Contact Us</h3>
+
+            <p>Machakos, Kenya</p>
+            <p>Phone: To be added</p>
+            <p>Email: To be added</p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 Machakos Secondary School for the Deaf.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+</body>
+</html>
