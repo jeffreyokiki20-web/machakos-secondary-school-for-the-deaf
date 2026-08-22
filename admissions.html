@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admissions | Machakos Secondary School for the Deaf</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        header {
+            background: #064e3b;
+            color: white;
+        }
+
+        .top-bar {
+            background: #043c2d;
+            padding: 8px 5%;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .header-main {
+            padding: 20px 5%;
+            display: flex;
+            align-items: center;
+        }
+
+        .school-name {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            background: white;
+            color: #064e3b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .school-name h1 {
+            font-size: 25px;
+        }
+
+        .school-name p {
+            color: #d1fae5;
+            font-size: 14px;
+        }
+
+        nav {
+            background: white;
+            padding: 0 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 18px;
+            text-decoration: none;
+            color: #064e3b;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background: #064e3b;
+            color: white;
+        }
+
+        .page-banner {
+            background:
+                linear-gradient(rgba(0, 50, 40, 0.82), rgba(0, 50, 40, 0.82)),
+                url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            min-height: 320px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+
+            padding: 40px 20px;
+        }
+
+        .page-banner h2 {
+            font-size: 45px;
+            margin-bottom: 12px;
+        }
+
+        .page-banner p {
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 60px 5%;
+        }
+
+        .intro {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+
+        .intro h2 {
+            color: #064e3b;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            color: #064e3b;
+            font-size: 30px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        .admission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .admission-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .admission-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .admission-card h3 {
+            color: #064e3b;
+            margin-bottom: 12px;
+        }
+
+        .admission-card ul {
+            padding-left: 20px;
+        }
+
+        .admission-card li {
+            margin-bottom: 8px;
+        }
+
+        .process {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+
+        .process h2 {
+            color: #064e3b;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .step-number {
+            width: 55px;
+            height: 55px;
+            background: #064e3b;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            color: #064e3b;
+            margin-bottom: 8px;
+        }
+
+        .documents {
+            background: #f0fdf4;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .documents h2 {
+            color: #064e3b;
+            margin-bottom: 20px;
+        }
+
+        .documents ul {
+            padding-left: 25px;
+        }
+
+        .documents li {
+            margin-bottom: 10px;
+        }
+
+        .notice {
+            background: #fff7ed;
+            border-left: 5px solid #f59e0b;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 5px;
+        }
+
+        .notice h3 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        .contact-box {
+            background: #064e3b;
+            color: white;
+            padding: 45px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 25px;
+            background: #f59e0b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #022c22;
+            color: white;
+            padding: 45px 5% 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #d1d5db;
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            border-top: 1px solid #374151;
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 900px) {
+
+            .admission-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .header-main {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .school-name {
+                flex-direction: column;
+            }
+
+            .page-banner h2 {
+                font-size: 34px;
+            }
+
+            .admission-grid,
+            .steps,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="top-bar">
+
+        Welcome to Machakos Secondary School for the Deaf
+
+    </div>
+
+
+    <div class="header-main">
+
+        <div class="school-name">
+
+
+            <div class="logo">
+
+                MSS<br>
+                DEAF
+
+            </div>
+
+
+            <div>
+
+                <h1>
+                    Machakos Secondary School for the Deaf
+                </h1>
+
+                <p>
+                    Empowering Learners • Inspiring Excellence • Building Futures
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<nav>
+
+    <ul>
+
+
+        <li>
+
+            <a href="index.html">
+                Home
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="academics.html">
+                Academics
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="admissions.html" class="active">
+                Admissions
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="departments.html">
+                Departments
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="news.html">
+                News
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </li>
+
+
+    </ul>
+
+</nav>
+
+
+
+<section class="page-banner">
+
+    <div>
+
+        <h2>
+            Admissions
+        </h2>
+
+        <p>
+            Information for prospective learners and families
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<main class="container">
+
+
+<section class="intro">
+
+    <h2>
+        Welcome to Our Admissions Section
+    </h2>
+
+
+    <p>
+
+        Machakos Secondary School for the Deaf welcomes learners
+        who meet the school's admission requirements and are seeking
+        quality education in a supportive learning environment.
+
+    </p>
+
+
+    <br>
+
+
+    <p>
+
+        We encourage parents, guardians and prospective learners
+        to contact the school directly for the latest information
+        about available places, admission requirements, reporting
+        dates and any required documentation.
+
+    </p>
+
+</section>
+
+
+
+<section>
+
+
+<div class="section-title">
+
+    <h2>
+        Admission Information
+    </h2>
+
+    <p>
+        Important areas to consider when applying
+    </p>
+
+</div>
+
+
+
+<div class="admission-grid">
+
+
+<div class="admission-card">
+
+    <div class="admission-icon">
+        📝
+    </div>
+
+    <h3>
+        Admission Requirements
+    </h3>
+
+    <p>
+        Prospective learners should meet the applicable
+        educational and school admission requirements.
+    </p>
+
+    <br>
+
+    <p>
+        Contact the school to confirm the current requirements
+        before making arrangements.
+    </p>
+
+</div>
+
+
+
+<div class="admission-card">
+
+    <div class="admission-icon">
+        📄
+    </div>
+
+    <h3>
+        Required Documents
+    </h3>
+
+    <p>
+        Applicants may be required to provide relevant
+        educational and identification documents.
+    </p>
+
+    <br>
+
+    <p>
+        The school should be contacted for the current
+        list of required documents.
+    </p>
+
+</div>
+
+
+
+<div class="admission-card">
+
+    <div class="admission-icon">
+        📞
+    </div>
+
+    <h3>
+        Enquiries
+    </h3>
+
+    <p>
+        Parents and guardians are encouraged to contact
+        the school for clarification about the admission
+        process.
+    </p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="process">
+
+
+    <h2>
+        General Admission Process
+    </h2>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="step-number">
+                1
+            </div>
+
+            <h3>
+                Enquire
+            </h3>
+
+            <p>
+                Contact the school to obtain current
+                admission information.
+            </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div class="step-number">
+                2
+            </div>
+
+            <h3>
+                Apply
+            </h3>
+
+            <p>
+                Complete the applicable admission
+                application process.
+            </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div class="step-number">
+                3
+            </div>
+
+            <h3>
+                Assessment
+            </h3>
+
+            <p>
+                Follow any assessment or verification
+                procedures required by the school.
+            </p>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <div class="step-number">
+                4
+            </div>
+
+            <h3>
+                Reporting
+            </h3>
+
+            <p>
+                Successful applicants receive information
+                about reporting and joining procedures.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<section class="documents">
+
+
+    <h2>
+        Information Parents and Guardians Should Confirm
+    </h2>
+
+
+    <ul>
+
+        <li>
+            Current admission requirements
+        </li>
+
+        <li>
+            Available places and entry levels
+        </li>
+
+        <li>
+            Required learner documentation
+        </li>
+
+        <li>
+            Reporting and admission dates
+        </li>
+
+        <li>
+            School fees and other approved charges
+        </li>
+
+        <li>
+            Boarding or accommodation arrangements, where applicable
+        </li>
+
+        <li>
+            Uniform and personal requirements
+        </li>
+
+        <li>
+            Any special educational or support requirements
+        </li>
+
+    </ul>
+
+
+</section>
+
+
+
+<section class="notice">
+
+
+    <h3>
+        Important Notice
+    </h3>
+
+
+    <p>
+
+        The information on this page is intended as general
+        guidance while the official school admission information
+        is being prepared.
+
+        Parents and guardians should confirm all admission,
+        fee and reporting information directly with the school
+        before making decisions.
+
+    </p>
+
+
+</section>
+
+
+
+<section class="contact-box">
+
+
+    <h2>
+        Need More Information?
+    </h2>
+
+
+    <p>
+
+        Contact Machakos Secondary School for the Deaf
+        for official admission information and enquiries.
+
+    </p>
+
+
+    <a href="contact.html" class="btn">
+
+        Contact the School
+
+    </a>
+
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+
+<div class="footer-grid">
+
+
+<div>
+
+    <h3>
+        Machakos Secondary School for the Deaf
+    </h3>
+
+    <p>
+
+        Empowering learners through quality education,
+        inclusion and holistic development.
+
+    </p>
+
+</div>
+
+
+
+<div>
+
+    <h3>
+        Quick Links
+    </h3>
+
+
+    <p>
+
+        <a href="index.html" style="color:white;">
+            Home
+        </a>
+
+    </p>
+
+
+    <p>
+
+        <a href="about.html" style="color:white;">
+            About Us
+        </a>
+
+    </p>
+
+
+    <p>
+
+        <a href="academics.html" style="color:white;">
+            Academics
+        </a>
+
+    </p>
+
+
+    <p>
+
+        <a href="admissions.html" style="color:white;">
+            Admissions
+        </a>
+
+    </p>
+
+
+</div>
+
+
+
+<div>
+
+    <h3>
+        Contact Us
+    </h3>
+
+
+    <p>
+        Machakos, Kenya
+    </p>
+
+
+    <p>
+        Phone: To be added
+    </p>
+
+
+    <p>
+        Email: To be added
+    </p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="copyright">
+
+    © 2026 Machakos Secondary School for the Deaf.
+    All Rights Reserved.
+
+</div>
+
+
+</footer>
+
+
+</body>
+
+</html>
