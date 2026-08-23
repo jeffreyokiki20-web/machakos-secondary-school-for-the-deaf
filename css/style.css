@@ -2040,3 +2040,483 @@ footer a:hover {
     }
 
 }
+/* =========================================================
+   26. PROFESSIONAL ABOUT PAGE
+   ========================================================= */
+
+.about-hero {
+    min-height: 450px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            rgba(2, 44, 34, 0.80),
+            rgba(2, 44, 34, 0.85)
+        ),
+        url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.about-hero-content {
+    max-width: 850px;
+}
+
+.about-hero h2 {
+    font-size: 50px;
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+}
+
+.about-hero p:not(.section-label) {
+    font-size: 19px;
+
+    color: #e5e7eb;
+}
+
+
+/* Who we are */
+
+.about-introduction {
+    padding: 85px 0 70px;
+}
+
+.about-intro-content {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+.about-intro-content h2 {
+    color: var(--primary);
+
+    font-size: 38px;
+
+    line-height: 1.2;
+}
+
+.about-intro-content > div:last-child p {
+    color: var(--muted);
+
+    margin-bottom: 18px;
+
+    font-size: 17px;
+}
+
+
+/* Education approach */
+
+.about-approach {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+    margin-bottom: 85px;
+}
+
+.about-approach-image img {
+    width: 100%;
+
+    height: 450px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.13);
+}
+
+.about-approach-content h2 {
+    color: var(--primary);
+
+    font-size: 36px;
+
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+}
+
+.about-approach-content > p:not(.section-label) {
+    color: var(--muted);
+
+    margin-bottom: 25px;
+}
+
+.approach-points > div {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-start;
+
+    margin-bottom: 18px;
+}
+
+.approach-points span {
+    width: 32px;
+
+    height: 32px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #ecfdf5;
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+.approach-points p {
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* Vision and mission */
+
+.vision-mission {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 85px;
+}
+
+.vision-card,
+.mission-card {
+    padding: 40px;
+
+    border-radius: 12px;
+
+    box-shadow: var(--shadow);
+}
+
+.vision-card {
+    background: var(--primary);
+
+    color: var(--white);
+}
+
+.mission-card {
+    background: var(--white);
+
+    border-top: 5px solid var(--secondary);
+}
+
+.vm-icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.vision-card .section-label {
+    color: var(--secondary) !important;
+}
+
+.mission-card .section-label {
+    color: var(--secondary) !important;
+}
+
+.vision-card h2,
+.mission-card h2 {
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.vision-card p:not(.section-label),
+.mission-card p:not(.section-label) {
+    line-height: 1.8;
+}
+
+.mission-card p:not(.section-label) {
+    color: var(--muted);
+}
+
+.vision-card small,
+.mission-card small {
+    display: block;
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    opacity: 0.7;
+}
+
+
+/* Values */
+
+.about-values {
+    margin-bottom: 85px;
+}
+
+.values-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.value {
+    background: var(--white);
+
+    padding: 30px 25px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.value:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.value-icon {
+    width: 60px;
+
+    height: 60px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ecfdf5;
+
+    font-size: 27px;
+}
+
+.value h3 {
+    color: var(--primary);
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+.value p {
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* Why school */
+
+.why-school {
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 60px;
+
+    padding: 65px;
+
+    margin-bottom: 80px;
+
+    border-radius: 12px;
+
+    background: #ecfdf5;
+}
+
+.why-school h2 {
+    color: var(--primary);
+
+    font-size: 36px;
+
+    line-height: 1.2;
+}
+
+.why-school-points {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+.why-school-points > div {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-start;
+}
+
+.why-school-points strong {
+    color: var(--secondary);
+
+    font-size: 22px;
+}
+
+.why-school-points p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* About CTA */
+
+.about-cta {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 60px;
+
+    margin-bottom: 80px;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: var(--white);
+}
+
+.about-cta h2 {
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+.about-cta p:not(.section-label) {
+    color: #d1d5db;
+
+    max-width: 650px;
+}
+
+
+/* About responsive */
+
+@media (max-width: 900px) {
+
+    .about-intro-content,
+    .about-approach,
+    .why-school {
+        grid-template-columns: 1fr;
+    }
+
+    .vision-mission {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .about-hero {
+        min-height: 360px;
+    }
+
+    .about-hero h2 {
+        font-size: 37px;
+    }
+
+    .about-hero p:not(.section-label) {
+        font-size: 16px;
+    }
+
+    .about-introduction {
+        padding: 60px 0 50px;
+    }
+
+    .about-intro-content h2 {
+        font-size: 30px;
+    }
+
+    .about-approach-image img {
+        height: 320px;
+    }
+
+    .about-approach-content h2 {
+        font-size: 30px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-school {
+        padding: 35px 25px;
+    }
+
+    .why-school h2 {
+        font-size: 30px;
+    }
+
+    .why-school-points {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cta {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 35px 25px;
+    }
+
+    .about-cta h2 {
+        font-size: 28px;
+    }
+
+}
