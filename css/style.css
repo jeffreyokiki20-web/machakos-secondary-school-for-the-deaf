@@ -962,3 +962,720 @@ footer a:hover {
     }
 
 }
+/* =========================================================
+   23. PROFESSIONAL HOME PAGE
+   ========================================================= */
+
+
+/* ---------- Hero Improvements ---------- */
+
+.hero {
+    position: relative;
+    min-height: 650px;
+
+    background:
+        linear-gradient(
+            rgba(2, 44, 34, 0.72),
+            rgba(2, 44, 34, 0.78)
+        ),
+        url("../images/school-banner.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 5%;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2, 44, 34, 0.85),
+            rgba(2, 44, 34, 0.35)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+}
+
+.hero-small-title {
+    color: var(--secondary) !important;
+
+    font-size: 15px !important;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px !important;
+}
+
+.hero h2 {
+    font-size: 58px;
+
+    line-height: 1.12;
+
+    margin-bottom: 22px;
+}
+
+.hero-content > p:not(.hero-small-title) {
+    max-width: 700px;
+
+    font-size: 20px;
+
+    color: #f3f4f6;
+}
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 10px;
+}
+
+
+/* ---------- Button Improvements ---------- */
+
+.btn {
+    border: 2px solid transparent;
+
+    padding: 14px 27px;
+
+    border-radius: 6px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+    background: var(--primary);
+
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: var(--secondary);
+
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background: #d97706;
+}
+
+
+/* ---------- Section Improvements ---------- */
+
+.section {
+    width: 90%;
+
+    max-width: var(--container);
+
+    margin: 0 auto 80px;
+
+    padding-top: 20px;
+}
+
+.section-label {
+    color: var(--secondary) !important;
+
+    font-size: 13px !important;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 8px !important;
+}
+
+.section-title {
+    max-width: 800px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+
+    line-height: 1.2;
+}
+
+
+/* ---------- Welcome Section ---------- */
+
+.welcome {
+    padding-top: 90px;
+}
+
+.welcome-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.welcome-image-container {
+    position: relative;
+}
+
+.welcome-image {
+    width: 100%;
+
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.welcome-text h2 {
+    color: var(--primary);
+
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+}
+
+.welcome-text p {
+    color: var(--muted);
+
+    margin-bottom: 18px;
+}
+
+
+/* ---------- Feature Cards ---------- */
+
+.highlights {
+    padding-top: 20px;
+}
+
+.highlights .cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+.highlights .card {
+    text-align: center;
+
+    padding: 35px 25px;
+
+    border-top: 4px solid transparent;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.highlights .card:hover {
+    transform: translateY(-8px);
+
+    border-top-color: var(--secondary);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.highlights .icon {
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #ecfdf5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.highlights .card h3 {
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+.highlights .card p {
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* ---------- Statistics ---------- */
+
+.stats {
+    width: 100%;
+
+    max-width: none;
+
+    background: var(--primary);
+
+    color: var(--white);
+
+    padding: 65px 5%;
+
+    margin-bottom: 80px;
+}
+
+.stats-grid {
+    max-width: var(--container);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    text-align: center;
+}
+
+.stat {
+    padding: 15px;
+}
+
+.stat h3 {
+    color: var(--secondary);
+
+    font-size: 45px;
+
+    line-height: 1;
+
+    margin-bottom: 10px;
+}
+
+.stat p {
+    color: #e5e7eb;
+
+    font-size: 16px;
+}
+
+
+/* ---------- School Life ---------- */
+
+.school-life {
+    padding-top: 20px;
+}
+
+.life-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.life-card {
+    background: var(--white);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.life-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.13);
+}
+
+.life-image {
+    height: 230px;
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+/* Temporary illustrative photographs */
+
+.academic-image {
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,0.15),
+            rgba(0,0,0,0.15)
+        ),
+        url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80");
+}
+
+.sports-image {
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,0.15),
+            rgba(0,0,0,0.15)
+        ),
+        url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=80");
+}
+
+.talent-image {
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,0.15),
+            rgba(0,0,0,0.15)
+        ),
+        url("https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=80");
+}
+
+.life-content {
+    padding: 25px;
+}
+
+.life-content h3 {
+    color: var(--primary);
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.life-content p {
+    color: var(--muted);
+
+    margin-bottom: 15px;
+}
+
+.life-content a {
+    color: var(--primary);
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.life-content a:hover {
+    color: var(--secondary);
+}
+
+
+/* ---------- News Preview ---------- */
+
+.news-preview {
+    padding-top: 20px;
+}
+
+.news-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.news-card {
+    padding: 28px;
+}
+
+.news-date {
+    display: inline-block;
+
+    background: #ecfdf5;
+
+    color: var(--primary);
+
+    padding: 6px 12px;
+
+    border-radius: 4px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 15px;
+}
+
+.news-card h3 {
+    color: var(--primary);
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+.news-card p {
+    color: var(--muted);
+
+    margin-bottom: 18px;
+}
+
+.news-card a {
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.news-card a:hover {
+    color: var(--secondary);
+}
+
+
+/* ---------- Gallery Preview ---------- */
+
+.gallery-preview {
+    padding-top: 20px;
+}
+
+.gallery-preview .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.gallery-preview .gallery-item {
+    height: 240px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    border-radius: 8px;
+}
+
+.gallery-one {
+    background-image:
+        url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=80");
+}
+
+.gallery-two {
+    background-image:
+        url("https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=700&q=80");
+}
+
+.gallery-three {
+    background-image:
+        url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=700&q=80");
+}
+
+.gallery-four {
+    background-image:
+        url("https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=700&q=80");
+}
+
+.gallery-button {
+    text-align: center;
+
+    margin-top: 35px;
+}
+
+
+/* ---------- Call To Action ---------- */
+
+.cta {
+    width: 100%;
+
+    max-width: none;
+
+    border-radius: 0;
+
+    margin-bottom: 0;
+
+    padding: 90px 20px;
+
+    background:
+        linear-gradient(
+            rgba(2,44,34,0.90),
+            rgba(2,44,34,0.90)
+        ),
+        url("../images/school-banner.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.cta-content {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.cta .section-label {
+    color: var(--secondary) !important;
+}
+
+.cta h2 {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.cta p:not(.section-label) {
+    color: #e5e7eb;
+
+    margin-bottom: 25px;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   24. PROFESSIONAL HOME RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .highlights .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .life-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-preview .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 550px;
+
+        padding: 70px 6%;
+    }
+
+    .hero h2 {
+        font-size: 40px;
+    }
+
+    .hero-content > p:not(.hero-small-title) {
+        font-size: 17px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .welcome {
+        padding-top: 60px;
+    }
+
+    .welcome-content {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .welcome-image {
+        height: 320px;
+    }
+
+    .welcome-text h2 {
+        font-size: 30px;
+    }
+
+    .highlights .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 15px;
+    }
+
+    .stat h3 {
+        font-size: 36px;
+    }
+
+    .life-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-preview .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-preview .gallery-item {
+        height: 180px;
+    }
+
+    .cta {
+        padding: 65px 20px;
+    }
+
+    .cta h2 {
+        font-size: 30px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-preview .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-preview .gallery-item {
+        height: 220px;
+    }
+
+}
