@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Departments | Machakos Secondary School for the Deaf</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        header {
+            background: #064e3b;
+            color: white;
+        }
+
+        .top-bar {
+            background: #043c2d;
+            padding: 8px 5%;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .header-main {
+            padding: 20px 5%;
+            display: flex;
+            align-items: center;
+        }
+
+        .school-name {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            background: white;
+            color: #064e3b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .school-name h1 {
+            font-size: 25px;
+        }
+
+        .school-name p {
+            color: #d1fae5;
+            font-size: 14px;
+        }
+
+        nav {
+            background: white;
+            padding: 0 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 18px;
+            text-decoration: none;
+            color: #064e3b;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background: #064e3b;
+            color: white;
+        }
+
+        .page-banner {
+            background:
+                linear-gradient(rgba(0, 50, 40, 0.82), rgba(0, 50, 40, 0.82)),
+                url("https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            min-height: 320px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+
+            padding: 40px 20px;
+        }
+
+        .page-banner h2 {
+            font-size: 45px;
+            margin-bottom: 12px;
+        }
+
+        .page-banner p {
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 60px 5%;
+        }
+
+        .intro {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            margin-bottom: 45px;
+        }
+
+        .intro h2 {
+            color: #064e3b;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            color: #064e3b;
+            font-size: 30px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        .department-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .department-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .department-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .department-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .department-card h3 {
+            color: #064e3b;
+            margin-bottom: 12px;
+        }
+
+        .department-card p {
+            color: #555;
+        }
+
+        .support-section {
+            background: #064e3b;
+            color: white;
+            padding: 45px;
+            border-radius: 10px;
+            margin-bottom: 45px;
+        }
+
+        .support-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .support-card {
+            background: rgba(255,255,255,0.08);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .support-card .icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .support-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .message {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .message h2 {
+            color: #064e3b;
+            margin-bottom: 15px;
+        }
+
+        .cta {
+            background: #f59e0b;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 25px;
+            background: white;
+            color: #064e3b;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #022c22;
+            color: white;
+            padding: 45px 5% 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #d1d5db;
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            border-top: 1px solid #374151;
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 900px) {
+
+            .department-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .support-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .header-main {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .school-name {
+                flex-direction: column;
+            }
+
+            .page-banner h2 {
+                font-size: 34px;
+            }
+
+            .department-grid,
+            .support-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="top-bar">
+
+        Welcome to Machakos Secondary School for the Deaf
+
+    </div>
+
+
+    <div class="header-main">
+
+        <div class="school-name">
+
+
+            <div class="logo">
+
+                MSS<br>
+                DEAF
+
+            </div>
+
+
+            <div>
+
+                <h1>
+                    Machakos Secondary School for the Deaf
+                </h1>
+
+                <p>
+                    Empowering Learners • Inspiring Excellence • Building Futures
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<nav>
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="about.html">
+                About Us
+            </a>
+        </li>
+
+        <li>
+            <a href="academics.html">
+                Academics
+            </a>
+        </li>
+
+        <li>
+            <a href="admissions.html">
+                Admissions
+            </a>
+        </li>
+
+        <li>
+            <a href="departments.html" class="active">
+                Departments
+            </a>
+        </li>
+
+        <li>
+            <a href="news.html">
+                News
+            </a>
+        </li>
+
+        <li>
+            <a href="gallery.html">
+                Gallery
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<section class="page-banner">
+
+    <div>
+
+        <h2>
+            Our Departments
+        </h2>
+
+        <p>
+            Working together to support learning and learner development
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<main class="container">
+
+
+<section class="intro">
+
+    <h2>
+        Supporting the Whole Learner
+    </h2>
+
+    <p>
+
+        The different areas of the school work together to support
+        academic achievement, personal development, practical skills
+        and the wellbeing of learners.
+
+    </p>
+
+    <br>
+
+    <p>
+
+        This page provides an overview of key areas of school
+        activity. The official list of departments, departmental
+        structures and staff responsibilities can be added as the
+        school provides the relevant information.
+
+    </p>
+
+</section>
+
+
+
+<section>
+
+    <div class="section-title">
+
+        <h2>
+            Academic & Educational Areas
+        </h2>
+
+        <p>
+            Areas that contribute to teaching and learning
+        </p>
+
+    </div>
+
+
+    <div class="department-grid">
+
+
+        <div class="department-card">
+
+            <div class="department-icon">
+                ➗
+            </div>
+
+            <h3>
+                Mathematics
+            </h3>
+
+            <p>
+
+                Developing numerical reasoning, logical thinking,
+                problem-solving and mathematical skills.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="department-card">
+
+            <div class="department-icon">
+                🧪
+            </div>
+
+            <h3>
+                Sciences
+            </h3>
+
+            <p>
+
+                Supporting scientific knowledge, investigation,
+                experimentation and practical learning.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="department-card">
+
+            <div class="department-icon">
+                🌍
+            </div>
+
+            <h3>
+                Humanities
+            </h3>
+
+            <p>
+
+                Promoting understanding of society, history,
+                geography, culture and citizenship.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="department-card">
+
+            <div class="department-icon">
+                💻
+            </div>
+
+            <h3>
+                ICT & Technology
+            </h3>
+
+            <p>
+
+                Helping learners develop digital literacy,
+                computer skills and responsible technology use.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="department-card">
+
+            <div class="department-icon">
+                🎨
+            </div>
+
+            <h3>
+                Creative Activities
+            </h3>
+
+            <p>
+
+                Encouraging creativity, self-expression,
+                artistic development and confidence.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="department-card">
+
+            <div class="department-icon">
+                🛠️
+            </div>
+
+            <h3>
+                Practical Skills
+            </h3>
+
+            <p>
+
+                Supporting practical learning, independence,
+                problem-solving and preparation for life.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<section class="support-section">
+
+
+    <h2>
+        Learner Support & Development
+    </h2>
+
+
+    <div class="support-grid">
+
+
+        <div class="support-card">
+
+            <div class="icon">
+                🧏
+            </div>
+
+            <h3>
+                Learner Support
+            </h3>
+
+            <p>
+
+                Supporting learners according to their
+                individual educational needs.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="support-card">
+
+            <div class="icon">
+                🏃
+            </div>
+
+            <h3>
+                Sports & Games
+            </h3>
+
+            <p>
+
+                Encouraging physical fitness, teamwork,
+                discipline and healthy competition.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="support-card">
+
+            <div class="icon">
+                🌟
+            </div>
+
+            <h3>
+                Talent Development
+            </h3>
+
+            <p>
+
+                Creating opportunities for learners to
+                identify and develop their talents.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="support-card">
+
+            <div class="icon">
+                🤝
+            </div>
+
+            <h3>
+                Guidance & Development
+            </h3>
+
+            <p>
+
+                Supporting learners' personal growth,
+                confidence and responsible decision-making.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="support-card">
+
+            <div class="icon">
+                📚
+            </div>
+
+            <h3>
+                Learning Resources
+            </h3>
+
+            <p>
+
+                Supporting access to appropriate learning
+                materials and educational resources.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="support-card">
+
+            <div class="icon">
+                🌱
+            </div>
+
+            <h3>
+                Life Skills
+            </h3>
+
+            <p>
+
+                Encouraging independence, responsibility
+                and preparation for life beyond school.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<section class="message">
+
+    <h2>
+        Working Together
+    </h2>
+
+    <p>
+
+        A strong school community depends on cooperation between
+        teachers, learners, support staff, parents, guardians and
+        other stakeholders.
+
+    </p>
+
+    <br>
+
+    <p>
+
+        Together, these efforts help create a supportive environment
+        where every learner can pursue their potential.
+
+    </p>
+
+</section>
+
+
+
+<section class="cta">
+
+    <h2>
+        Learn More About Our School
+    </h2>
+
+    <p>
+        Explore our academic programmes, admissions information
+        and other school activities.
+    </p>
+
+    <a href="academics.html" class="btn">
+        Explore Academics
+    </a>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <h3>
+                Machakos Secondary School for the Deaf
+            </h3>
+
+            <p>
+
+                Empowering learners through quality education,
+                inclusion and holistic development.
+
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <p>
+                <a href="index.html" style="color:white;">
+                    Home
+                </a>
+            </p>
+
+            <p>
+                <a href="about.html" style="color:white;">
+                    About Us
+                </a>
+            </p>
+
+            <p>
+                <a href="academics.html" style="color:white;">
+                    Academics
+                </a>
+            </p>
+
+            <p>
+                <a href="admissions.html" style="color:white;">
+                    Admissions
+                </a>
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                Machakos, Kenya
+            </p>
+
+            <p>
+                Phone: To be added
+            </p>
+
+            <p>
+                Email: To be added
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Machakos Secondary School for the Deaf.
+        All Rights Reserved.
+
+    </div>
+
+
+</footer>
+
+
+</body>
+
+</html>
