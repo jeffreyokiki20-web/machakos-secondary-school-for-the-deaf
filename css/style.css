@@ -3156,3 +3156,168 @@ footer a:hover {
     }
 
 }
+/* =========================================================
+   28. DEPARTMENTS
+   ========================================================= */
+
+.department-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.department-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: 0.25s;
+}
+
+.department-card:hover {
+    transform: translateY(-5px);
+}
+
+.department-icon {
+    width: 60px;
+    height: 60px;
+
+    background: #ecfdf5;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+}
+
+.department-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   29. LEARNER SUPPORT
+   ========================================================= */
+
+.support-section {
+    background: var(--primary);
+
+    color: var(--white);
+
+    padding: 45px;
+
+    border-radius: var(--radius);
+
+    margin-bottom: 50px;
+}
+
+.support-section > h2 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.support-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.support-card {
+    background: rgba(255,255,255,0.08);
+
+    padding: 25px;
+
+    border-radius: var(--radius);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    transition: 0.25s;
+}
+
+.support-card:hover {
+    transform: translateY(-5px);
+
+    background: rgba(255,255,255,0.13);
+}
+
+.support-card .icon {
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+.support-card h3 {
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   30. DEPARTMENTS MESSAGE
+   ========================================================= */
+
+.message {
+    background: var(--white);
+
+    padding: 40px;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 45px;
+
+    text-align: center;
+}
+
+.message h2 {
+    color: var(--primary);
+
+    margin-bottom: 15px;
+}
+
+.message p {
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   31. DEPARTMENTS RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .department-grid,
+    .support-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .department-grid,
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .support-section {
+        padding: 30px 20px;
+    }
+
+    .message {
+        padding: 30px 20px;
+    }
+
+}
